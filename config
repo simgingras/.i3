@@ -167,11 +167,36 @@ bindsym $mod+r mode "resize"
 
 hide_edge_borders both
 
+# Colors
+set $bg_color #3c3b37
+set $fg_color #dfdbd2
+set $text_color #6f6d69
+set $urgent_color #900000
+set $indicator_color #00ff00
+
+# Window Colours
+#				Border		Background	Text		Indicator
+client.focused			$bg_color	$bg_color	$fg_color	$indicator_color
+client.focused_inactive		$bg_color	$bg_color	$text_color	$indicator_color
+client.unfocused		$bg_color	$bg_color	$text_color	$indicator_color
+client.urgent			$urgent_color	$urgent_color	$fg_color	$indicator_color
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         status_command i3status
         tray_output primary
+
+	colors {
+		separator		$text_color
+		background		$bg_color
+		statusline		$fg_color
+#		Border			Border		Background	Text
+		focused_workspace	$bg_color	$bg_color	$fg_color
+		active_workspace	$bg_color	$bg_color	$text_color
+		inactive_workspace	$bg_color	$bg_color	$text_color
+		urgent_workspace	$urgent_color	$urgent_color	$fg_color
+	}
 }
 
 bindsym $mod+Shift+x exec xset dpms 10 && i3lock -n -i $dir/wallpaper.png && xset dpms 0
