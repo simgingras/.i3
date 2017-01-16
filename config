@@ -32,6 +32,13 @@ font pango:FontAwesome 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Colors
+set $bg_color #3c3b37
+set $fg_color #dfdbd2
+set $text_color #6f6d69
+set $urgent_color #900000
+set $indicator_color #00ff00
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -39,7 +46,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $sup+d exec dmenu_run
+bindsym $sup+d exec rofi -show run -lines 3 -eh 2 -opacity "85" -bw 0 -bc "$bg_color" -bg "$bg_color" -fg "$text_color" -hlbg "$bg_color" -hlfg "fg_color" -font "FontAwesome 36"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -169,13 +176,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 hide_edge_borders both
-
-# Colors
-set $bg_color #3c3b37
-set $fg_color #dfdbd2
-set $text_color #6f6d69
-set $urgent_color #900000
-set $indicator_color #00ff00
 
 # Window Colours
 #				Border		Background	Text		Indicator
