@@ -229,4 +229,4 @@ exec xset dpms 0
 exec --no-startup-id nm-applet
 exec google-chrome
 exec rhythmbox
-exec compton
+exec compton -f -b
