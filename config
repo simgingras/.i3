@@ -33,9 +33,9 @@ font pango:FontAwesome 11
 floating_modifier $mod
 
 # Colors
-set $bg_color #3c3b37
-set $fg_color #dfdbd2
-set $text_color #6f6d69
+set $bg_color #2f343f
+set $fg_color #d3dae3
+set $text_color #505666
 set $urgent_color #900000
 set $indicator_color #00ff00
 
