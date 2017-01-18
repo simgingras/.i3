@@ -97,7 +97,7 @@ bindsym $sup+Shift+space floating toggle
 bindsym $sup+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $sup+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -187,7 +187,7 @@ client.urgent			$urgent_color	$urgent_color	$fg_color	$indicator_color
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3blocks -c $dir/i3blocks.conf
         tray_output primary
 
 	colors {
@@ -220,6 +220,9 @@ bindsym XF86TouchpadToggle exec $dir/toggletouchpad.sh # toggle touchpad
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 exec_always feh --bg-scale $dir/wallpaper.png
 exec xset dpms 0
