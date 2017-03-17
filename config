@@ -33,11 +33,11 @@ font pango:FontAwesome 11
 floating_modifier $mod
 
 # Colors
-set $bg_color #2f343f
-set $fg_color #d3dae3
-set $text_color #505666
+set $active_color #8fa876
+set $bg_color #2f2f2f
+set $fg_color #ded6d6
+set $text_color #606060
 set $urgent_color #900000
-set $indicator_color #00ff00
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -182,10 +182,10 @@ hide_edge_borders both
 
 # Window Colours
 #				Border		Background	Text		Indicator
-client.focused			$bg_color	$bg_color	$fg_color	$indicator_color
-client.focused_inactive		$bg_color	$bg_color	$text_color	$indicator_color
-client.unfocused		$bg_color	$bg_color	$text_color	$indicator_color
-client.urgent			$urgent_color	$urgent_color	$fg_color	$indicator_color
+client.focused			$bg_color	$bg_color	$fg_color	$active_color
+client.focused_inactive		$bg_color	$bg_color	$text_color	$active_color
+client.unfocused		$bg_color	$bg_color	$text_color	$active_color
+client.urgent			$urgent_color	$urgent_color	$fg_color	$active_color
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -198,7 +198,7 @@ bar {
 		background		$bg_color
 		statusline		$fg_color
 #		Border			Border		Background	Text
-		focused_workspace	$bg_color	$bg_color	$fg_color
+		focused_workspace	$active_color	$active_color	$fg_color
 		active_workspace	$bg_color	$bg_color	$text_color
 		inactive_workspace	$bg_color	$bg_color	$text_color
 		urgent_workspace	$urgent_color	$urgent_color	$fg_color
@@ -228,8 +228,10 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 exec_always feh --bg-scale $dir/wallpaper.png
+exec_always numlockx on
 exec xset dpms 0
 exec --no-startup-id nm-applet
 exec google-chrome
 exec rhythmbox
 exec compton -f -b
+exec ibus-daemon -d
