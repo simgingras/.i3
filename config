@@ -227,7 +227,7 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 exec_always feh --bg-scale $dir/wallpaper.png
 exec_always numlockx on
-exec_always i3-msg "workspace $workspace1; layout tabbed"
+exec i3-msg "workspace $workspace1; layout tabbed"
 exec xset dpms 0
 exec --no-startup-id nm-applet
 exec google-chrome
