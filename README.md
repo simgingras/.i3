@@ -26,3 +26,6 @@
 * i3blocks
 * moka-icon-theme
 * google-chrome
+* mint-y-theme
+* mint-y-icons
+* mint-x-icons
