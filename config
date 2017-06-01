@@ -236,3 +236,4 @@ exec google-chrome
 exec rhythmbox
 exec compton -f -b
 exec ibus-daemon -d
+exec nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }"
