@@ -141,8 +141,7 @@ assign [class="Google-chrome" window_role="browser"] $workspace1
 assign [class="Google-chrome" window_role="pop-up"] $workspace1
 assign [class="QtCreator"] $workspace3
 assign [class="bsp"] $workspace4
-assign [class="Rhythmbox"] $workspace10
-
+for_window [class="Spotify"] move to workspace $workspace10
 for_window [class="bsp"] fullscreen
 
 # reload the configuration file
@@ -233,7 +232,7 @@ exec i3-msg "workspace $workspace1; layout tabbed"
 exec xset dpms 0
 exec --no-startup-id nm-applet
 exec google-chrome
-exec rhythmbox
+exec spotify
 exec compton -f -b
 exec ibus-daemon -d
 exec nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceCompositionPipeline = On }"

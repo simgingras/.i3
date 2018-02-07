@@ -29,3 +29,4 @@
 * mint-y-theme
 * mint-y-icons
 * mint-x-icons
+* spotify
