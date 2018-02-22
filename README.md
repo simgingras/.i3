@@ -3,6 +3,8 @@
 ## Recommendations
 1. This repository should be cloned to ~/.i3.
 2. Add a symbolic link pointing to ~/.i3 if i3 reads its configuration from a file different from ~/.i3/config on your distribution.
+3. Add a symbolic link pointing to ~/.i3/dunstrc in ~/.config/dunst/
+4. Update /usr/share/dbus-1/services/org.freedesktop.Notifications.service with Exec=/usr/bin/dunst
 
 ## Recommended Resources
 * FontAwesome
@@ -30,3 +32,4 @@
 * mint-y-icons
 * mint-x-icons
 * spotify
+* dunst
