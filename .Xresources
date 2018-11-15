@@ -1,0 +1,13 @@
+!                  'background', 'border', 'separator'
+rofi.color-window: argb:e02f343f, #2f343f, #2f343f
+! State:           'bg',          'fg',    'bgalt',       'hlbg',  'hlfg'
+rofi.color-normal: argb:a02f343f, #7c818c, argb:a02f343f, #5294e2, #d3dae3
+rofi.width: 100
+rofi.lines: 5
+rofi.columns: 1
+rofi.font: FontAwesome 36
+rofi.bw: 0
+rofi.padding: 400
+rofi.eh: 1
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
