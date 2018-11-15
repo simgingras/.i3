@@ -33,10 +33,10 @@ font pango:FontAwesome 11
 floating_modifier $mod
 
 # Colors
-set $active_color #8fa876
-set $bg_color #2f2f2f
-set $fg_color #ded6d6
-set $text_color #606060
+set $active_color #5294e2
+set $bg_color #2f343f
+set $fg_color #d3dae3
+set $text_color #7c818c
 set $urgent_color #900000
 
 # start a terminal
@@ -110,7 +110,7 @@ set $workspace5 5 
 set $workspace6 6 
 set $workspace7 7 
 set $workspace8 8 
-set $workspace9 9 
+set $workspace9 9 
 set $workspace10 10 
 
 # switch to workspace
@@ -221,9 +221,10 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86TouchpadToggle exec $dir/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym XF86AudioStop exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
