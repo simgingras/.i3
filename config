@@ -139,7 +139,6 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 assign [class="Google-chrome" window_role="browser"] $workspace1
 assign [class="QtCreator"] $workspace3
-assign [class="Slack"] $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
 
 # reload the configuration file
@@ -208,6 +207,7 @@ bindsym $mod+Shift+x exec xset dpms 10 && i3lock -n -i $dir/wallpaper.png && xse
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle # mute mic
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -230,7 +230,6 @@ exec_always numlockx on
 exec xset dpms 0
 exec --no-startup-id nm-applet
 exec google-chrome
-exec slack
 exec spotify
 exec compton -f -b
 exec ibus-daemon -d
